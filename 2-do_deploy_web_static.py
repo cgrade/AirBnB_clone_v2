@@ -45,19 +45,22 @@ def do_deploy(archive_path):
     run("mkdir -p /data/web_static/releases/{}/".format(dir_name))
 
     # extract the contents of the archive into the new directory
-    run("tar -xzf /tmp/{} -C /data/web_static/releases/{}/".format(file_name, dir_name))
+    run("tar -xzf /tmp/{} -C /data/web_static/releases/{}/".format(
+        file_name, dir_name))
 
     # delete the archive from the server
     run("rm /tmp/{}".format(file_name))
 
     # move the contents of web_static into the new directory
-    run("mv /data/web_static/releases/{}/web_static/* /data/web_static/releases/{}/".format(dir_name, dir_name))
+    run("mv /data/web_static/releases/{}/web_static/* /data/\
+            web_static/releases/{}/".format(dir_name, dir_name))
 
     # remove the old web_static directory
     run("rm -rf /data/web_static/releases/{}/web_static".format(dir_name))
 
     # delete and recreate the symbolic link to the new version
     run("rm -rf /data/web_static/current")
-    run("ln -s /data/web_static/releases/{}/ /data/web_static/current".format(dir_name))
+    run("ln -s /data/web_static/releases/{}/ \
+            /data/web_static/current".format(dir_name))
 
     return True
