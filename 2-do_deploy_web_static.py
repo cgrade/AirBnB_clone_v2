@@ -4,7 +4,7 @@ from fabric.api import env, local, put, run
 from os import path
 
 
-env.hosts = ['3.85.148.88', '52.91.131.225']
+env.hosts = ['52.91.131.225']
 
 
 def do_pack():
@@ -52,15 +52,13 @@ def do_deploy(archive_path):
     run("rm /tmp/{}".format(file_name))
 
     # move the contents of web_static into the new directory
-    run("mv /data/web_static/releases/{}/web_static/* /data/\
-            web_static/releases/{}/".format(dir_name, dir_name))
+    run("mv /data/web_static/releases/{}/web_static/* /data/web_static/releases/{}/".format(dir_name, dir_name))
 
     # remove the old web_static directory
     run("rm -rf /data/web_static/releases/{}/web_static".format(dir_name))
 
     # delete and recreate the symbolic link to the new version
     run("rm -rf /data/web_static/current")
-    run("ln -s /data/web_static/releases/{}/ \
-            /data/web_static/current".format(dir_name))
+    run("ln -s /data/web_static/releases/{}/ /data/web_static/current".format(dir_name))
 
     return True
