@@ -6,6 +6,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
 @app.route('/', strict_slashes=False)
 def hello():
     """return a strings"""
@@ -22,7 +23,7 @@ def hbnb():
 def dynamic_text(text):
     """ Return the given variable"""
 
-    return 'C {}'.format(text.replace("_", " "))
+    return 'C {}'.format(text.replace("_", " ")4)
 
 
 if __name__ == "__main__":
