@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""A Flask web app that uses dynamic variable"""
+"""A Flask web app that uses dynamic variable to display
+    routing """
 
 from flask import Flask
 
