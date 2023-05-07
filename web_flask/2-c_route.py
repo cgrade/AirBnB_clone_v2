@@ -21,7 +21,8 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def dynamic_text(text):
     """ Return the given variable"""
-    return ('C is %s' % escape(text))
+
+    return 'C {}'.format(text.replace("_", " "))
 
 
 if __name__ == "__main__":
