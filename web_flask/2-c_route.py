@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""A Flask web app that uses dynamic variable to display
-    routing """
+"""A Flask web app that uses dynamic variable to display dynamic url routing
+"""
 
 from flask import Flask
 
+app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello():
@@ -20,7 +21,7 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def dynamic_text(text):
     """ Return the given variable"""
-    return (i'C is %s' % escape(text))
+    return ('C is %s' % escape(text))
 
 
 if __name__ == "__main__":
