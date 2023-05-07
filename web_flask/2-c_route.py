@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """A Flask web app that uses dynamic variable to display dynamic url routing
+and replaces '_' with spaces " "
 """
 
 from flask import Flask
@@ -23,7 +24,7 @@ def hbnb():
 def dynamic_text(text):
     """ Return the given variable"""
 
-    return 'C {}'.format(text.replace("_", " ")4)
+    return 'C {}'.format(text.replace("_", " "))
 
 
 if __name__ == "__main__":
