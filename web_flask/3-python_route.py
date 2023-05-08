@@ -31,7 +31,7 @@ def pythontext(text):
     """A view function that takes in a dynamic
     variable and return the variable
     """
-    return ("Python {}".format(text.replace("_", " ")))
+    return ("Python is {}".format(text.replace("_", " ")))
 
 
 if __name__ == "__main__":
