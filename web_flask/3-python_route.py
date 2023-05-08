@@ -26,8 +26,9 @@ def ctext(text):
     return ("C {}".format(text.replace("_", " ")))
 
 
+@app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def pythontext(text):
+def pythontext(text="is cool"):
     """A view function that takes in a dynamic
     variable and return the variable
     """
